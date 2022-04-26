@@ -15,5 +15,29 @@ If any bug occurs then by applying changes to the RTL design it is taken again f
 
 
 ### Labs using iVerilog and Gtkwave
+
+A 2x1 Mux is designed using Verilog as shown in below figure.
+
+![pic3_mux](https://user-images.githubusercontent.com/43933912/165370236-c6b70711-d4e3-4865-9af8-6fe9b5a796a4.PNG)
+
+A testbench is also written using verilog in which this 2x1 Mux having module name as good_mux is instantiated as uut. The uut ports are mapped with the design.
+
+![pic4mux](https://user-images.githubusercontent.com/43933912/165370699-5235f8e4-7a8b-46a4-8046-4605df582490.PNG)
+
+Following commands are used for running the good_mux.v and its test bench tb_good_mux.v 
+. iverilog good_mux.v tb_good_mux.v 
+. ./a.out
+.gtkwave tb_good_mux.vcd
+
+![pic6_terminal](https://user-images.githubusercontent.com/43933912/165371235-05fa96b4-3b9e-47bf-9048-0e551a4443db.PNG)
+
+gtkwave provide the output wavform as shown below.
+
+![pic5_muxwaveform](https://user-images.githubusercontent.com/43933912/165371357-4ef82838-9da9-4213-8a0c-b2dec2802091.PNG)
+
+
+
+
+
 ### Introduction to Yosys and Logic Synthesis
 ### Labs Using Yosys and Sky130 PDKs
