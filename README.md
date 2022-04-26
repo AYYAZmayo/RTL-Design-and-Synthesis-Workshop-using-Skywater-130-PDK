@@ -36,8 +36,17 @@ gtkwave provide the output wavform as shown below.
 ![pic5_muxwaveform](https://user-images.githubusercontent.com/43933912/165371357-4ef82838-9da9-4213-8a0c-b2dec2802091.PNG)
 
 
-
-
-
 ### Introduction to Yosys and Logic Synthesis
+
+![pic9_synthesis](https://user-images.githubusercontent.com/43933912/165377708-8da2aafe-dd42-4ba1-8028-cb841697d869.PNG)
+
+![synthesis](https://user-images.githubusercontent.com/43933912/165377765-e924d694-5437-4b18-a508-41e737da81f3.PNG)
+
+
+Yosys is RTL synthesizer. A synthesizer is a tool which converts RTL into gate level netlist.
+
+![pic7_yosys](https://user-images.githubusercontent.com/43933912/165377815-78ffcbe3-fc2e-495f-ae21-a1c29a4027c2.PNG)
+
+![pic8_verify_netflow](https://user-images.githubusercontent.com/43933912/165377851-3dd62759-6010-4940-b8e0-6a70735baa9f.PNG)
+
 ### Labs Using Yosys and Sky130 PDKs
