@@ -94,6 +94,23 @@ The netlist for the 2x1 mux which is generated using Yosys and sky130 PDK is sho
 
 ![netlist](https://user-images.githubusercontent.com/43933912/165385073-8cbbf7cf-b628-441d-834c-eedd335eafe4.PNG)
 
+## Day 2: Timing Libs, Hierachical vs Flat Synthesis and Efficient Flop coding styles
+### Introduction to Timing Libs
+In this workshop we are using Skywater130 PDK. This sky130 PDK has different timing libraries based on 130 nm process node. A timing library is actually the collection of standard cells like AND, OR, NOT and flip flop etc. A timing Library provides information about:
+* Cells power for each input pin of the cells
+* Timing delays for each cell in the form of lookup tables
+* Area foot print for the cells <br>
 
+These Timing Libraries are categerized based on PVT corner that is process, voltage and temperature corner e.g the library which we are using is **sky130_fd_sc_hd__tt_25c_1v80.lib**. Here, "tt" represents the process, "25c" represents the temperature of 25 centigrade and "1v80" represents the voltage of 1.80 Volts. PVT directly effects the performance of the cells.
+#### Process:
+Process represents the variations during the fabrication of chip. It could be due to temperature, pressure, dopant concentation or due to instruments used in the manufacturing of the chip. Due to these process variations transitors may have different chanel lengths throughout the chip, some transistors could have larger length so they behave faster whereas others may have shorter lengths so they work slow. So based on the process timing library could be of: <br>
+
+** Typical, Typical (tt):  typical normal process variation
+** Fast ,Fast (ff): fast process variation 
+** Slow,Slow (ss): slow process variation
+#### Voltage:
+Voltage effects the performance of the cells. In a chip the cells which have high volatge (placed closer to the supply) have less delay where as the cells which have low volatge due high IR drop posses more delay.
+#### Teperature:
+As the chip is to be used in different parts of the world under different different temperatures. So, where the temperature is high the cell delay increases so they behave slow whereas where the temperature is low they behave fast. So timing library are categorized based on operating temperatures.
 
 
