@@ -127,6 +127,7 @@ This .lib also conatains multiple versions of the same cell based on the strengt
 
 ![andcell_compp1](https://user-images.githubusercontent.com/43933912/165588553-7aa5d8bd-6b2a-48c4-ae7d-eecb7be29188.PNG)
 
+### Hierarchical vs Flat Synthesis
 
 
 
