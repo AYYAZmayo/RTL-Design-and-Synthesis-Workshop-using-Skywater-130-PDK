@@ -110,7 +110,24 @@ Process represents the variations during the fabrication of chip. It could be du
 ** Slow,Slow (ss): slow process variation
 #### Voltage:
 Voltage effects the performance of the cells. In a chip the cells which have high volatge (placed closer to the supply) have less delay where as the cells which have low volatge due high IR drop posses more delay.
-#### Teperature:
-As the chip is to be used in different parts of the world under different different temperatures. So, where the temperature is high the cell delay increases so they behave slow whereas where the temperature is low they behave fast. So timing library are categorized based on operating temperatures.
+#### Temperature:
+As the chip is to be used in different parts of the world under different different temperatures. So, where the temperature is high the cell delay increases so they behave slow whereas where the temperature is low they behave fast. So timing library are categorized based on operating temperatures. <br>
+
+When we open **sky130_fd_sc_hd__tt_25c_1v80.lib** , on the very first line the name of the library appears. It also contains technolgy which is CMOS. A typical snap shot of top lines is shown below:
+
+![lib](https://user-images.githubusercontent.com/43933912/165585334-f374c70b-bf19-47d5-93ea-e4fe6b43559a.png)
+
+There are many cells in this library out of which and2 cell is shown in below figure. Here you can see that it is of 2 pin AND gate. And for these 2 inputs there are four combinations possible and for each combination leakage power is given here. Along with this area  and total leakage power of the cell are also given as highlighted in yellow in belwo figure.
+
+
+![andup](https://user-images.githubusercontent.com/43933912/165586879-8f8c0bd3-6a84-4615-9378-66504320f4e5.PNG)
+
+This .lib also conatains multiple versions of the same cell based on the strength e.g above 2 input AND gate has two more versions as shown in below figure. Here "and2_0" , "and2_2" and "and2_4" comparison is shown. It can be seen that As we move from left "and2_0" to right "and2_4" the cell area and leakage power both are increasing that means the speed of the cell is increasing. It means "and2_0" is slowest and "and2_4" is fastest with minimum delay but at the cost of large area and power.
+
+![andcell_compp1](https://user-images.githubusercontent.com/43933912/165588553-7aa5d8bd-6b2a-48c4-ae7d-eecb7be29188.PNG)
+
+
+
+
 
 
