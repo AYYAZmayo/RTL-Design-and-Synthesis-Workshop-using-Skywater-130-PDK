@@ -132,7 +132,8 @@ This .lib also conatains multiple versions of the same cell based on the strengt
 #### Hierarchical Synthesis
 A hierarchical synthesis is one in which the netlist generated preserves the same hierarchy which is present in the original RTL code. As we know that when we have a large design to code, we code it verilog by firstdesigning the its submodules and then we combine these submodules into a top module. Its a hirachical way of designing adigital design. For simple example let's RTL design named as **multiple_modules** which has three inputs A,B and C and a single ouput Y. This top module has two submodules, one submodule is an AND gate and the second submodule is an OR gate. The hierarchical schematic is shown below:<br>
 
-![1651086037282](https://user-images.githubusercontent.com/43933912/165778660-55c68722-53e1-4908-83ab-68eed318ea5a.jpg)
+![1651086037282](https://user-images.githubusercontent.com/43933912/165815722-ab06d4a1-391c-4910-b9d5-312f6cbbd018.jpg)
+
 
 The RTL code for design is written in verilog as follows:<br>
 
