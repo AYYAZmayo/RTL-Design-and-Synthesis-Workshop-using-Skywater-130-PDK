@@ -174,7 +174,29 @@ If a synthesizer do not preserves the hierachy of the RTL design rather it gener
 ### Various Flip Flop Coding Styles and Optimization
 #### WHY Flip Flops
 In digital circuits a flip flop is used to restrict the glitches that are produced in the combinational circuits due to the propagation delays present in them. When we give input to the combinational circuit its ouput changes after the propagtion delay present in them due to which the ouput glitches. To understand this let's suppose we have a simple combinational circuit consists of an And gate and OR gate. There are three inputs A,B and C and one single ouput Y. The boolean equation for the circuit is **Y= (A & B) | C**. <br>
+
 ![1651167737775](https://user-images.githubusercontent.com/43933912/165815436-57ffefad-ab31-4f6b-b5ae-e5c71806fe21.jpg)
+
+Inputs A,B and C are applied to the circuit according to the waveform shown in below figure. At t=0ns ,initially A=0, B=0 and C=1. So, output is Y=1 at start. <br>
+
+![combinational circuit](https://user-images.githubusercontent.com/43933912/165820794-47cca898-5f69-4980-874b-e37074d11011.PNG)
+
+At t=1ns, both A and B are set to 1 and C is set to 0. As the propagation delay for AND gate is 2ns so, it's output repesented by wire "i" will get high after 2ns that is at t=3 as shown in below figure. Before this "i" is zero so the net result at the OR gate which is "(i | C)=Y" would make Y=0 at t=2ns as the propagation delay of OR gate is 1ns. At t=3ns the updated value of "i" appears and as result Y=1 again at t=4ns. According to the applied Inputs, Y should remain stable at 1 as can be seen in the below table:
+
+| A | B  | C  | Y |
+| :---:  | :-:| :-: | :-: |
+| 0 | 0  | 1  | 1 |
+| 1 | 1  | 0  | 1 |
+
+But due to the propagation delays we can see in the waveform does not remain 1 thorughout rather it Y glitches. So, in combinationa circuits output glitch is an isssue. <br>
+If we have series of combination circuits in which combinational circuit's output is fed to next combinational circuit as input and so on so forth, as shown in below figure. Then the not only the output of each combinational block would be glitching but also the whole circuit's output would contineously be glitch prone.<br> 
+![1651170751622](https://user-images.githubusercontent.com/43933912/165824708-2bfa3d96-7111-4b3f-b259-ed8431b4b097.jpg)
+
+To restrict the glitches flip flop(FF) is used. As the flop output only change at the clock edge otherwise it remains stable. SO even if the D input of flop is glitching , the output Q of the flop will be stable, which it feeds to the next combination block. So, the next combinational block see it as a stable input as result it outputs will also setle down rather than to be glitching. <br>
+![1651171292504](https://user-images.githubusercontent.com/43933912/165825977-a8c7378b-fcf5-41e7-bc1f-177698ca87e7.jpg)
+
+
+
 
 
 
