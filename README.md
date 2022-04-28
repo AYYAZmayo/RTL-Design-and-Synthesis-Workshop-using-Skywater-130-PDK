@@ -173,6 +173,7 @@ If a synthesizer do not preserves the hierachy of the RTL design rather it gener
 ### Various Flip Flop Coding Styles and Optimization
 #### WHY Flip Flops
 In digital circuits a flip flop is used to restrict the glitches that are produced in the combinational circuits due to the propagation delays present in them. When we give input to the combinational circuit its ouput changes after the propagtion delay present in them due to which the ouput glitches. To understand this let's suppose we have a simple combinational circuit consists of an And gate and OR gate. There are three inputs A,B and C and one single ouput Y. The boolean equation for the circuit is **Y= (A & B) | C**. <br>
-![1651167737775](https://user-images.githubusercontent.com/43933912/165814954-2e152473-839b-4b10-8246-eeb4a2e8b2d1.jpg)
+![1651167737775](https://user-images.githubusercontent.com/43933912/165815436-57ffefad-ab31-4f6b-b5ae-e5c71806fe21.jpg)
+
 
 
