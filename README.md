@@ -223,7 +223,7 @@ Synchronous reset flip flop is actually a flip whose output Q can be set to 0  o
 This flop is simulated on iverilog using a testbench, the output waveform is shown below.<br>
 ![sync_reset_dia](https://user-images.githubusercontent.com/43933912/166000921-37da03fc-89e9-44e7-9cff-9687ddb42c89.PNG)
 
-#### Asyncronous-Synchronous reset D-Flip Flop
+#### Asynchronous-Synchronous reset D-Flip Flop
 Such flip flop has both the capability to behave as asynchronous reset as well as synchronous reset. But asynchronous reset has higher periority over synchronous reset. The verilog code for this flipflop is shown below:<br>
 ![async_sync_code](https://user-images.githubusercontent.com/43933912/166007851-967ffb36-4fa8-465f-89a8-f5f39cb8429b.PNG)
 ![async_sync_reset_dia](https://user-images.githubusercontent.com/43933912/166007911-e8e1a792-ea1d-404c-8298-10a2ce717a6a.PNG)
