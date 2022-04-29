@@ -195,8 +195,41 @@ If we have series of combination circuits in which combinational circuit's outpu
 To restrict the glitches flip flop(FF) is used. As the flop output only change at the clock edge otherwise it remains stable. SO even if the D input of flop is glitching , the output Q of the flop will be stable, which it feeds to the next combination block. So, the next combinational block see it as a stable input as result it outputs will also setle down rather than to be glitching. <br>
 ![1651171292504](https://user-images.githubusercontent.com/43933912/165825977-a8c7378b-fcf5-41e7-bc1f-177698ca87e7.jpg)
 
+#### Flip Flop Coding Styles
+Flip flop as we know are edge triggered sequential element that is it works at the positive edge of the clock. One of the most comonly used flop is the D flip flop whose output Q flow the input D but only on the edge of the clock. A simple schematic of D-flip flop is shown below.<br>
+![image](https://user-images.githubusercontent.com/43933912/165985778-b5f1278e-d6e8-4e76-9ad5-d34df6275acf.png)
 
+The D-FF can be coded in different styles in Verilog. Here, we are mentioning below 4 type of D-flip flops.
+#### Asynchronous Reset D-Flip Flop
+An asynchronous reset flip flop is actually a flip whose output Q can be reset to zero irrespective of the clock edge. It means that whenever a high reset signal appears on the input of D-FF, its output Q goes low otherwise it follows the input D on every clock edge. The verilog code for asynchronous reset flipflop is shown below:<br>
+![async_rst](https://user-images.githubusercontent.com/43933912/165992693-ae6b6ec0-6cff-4a2e-bc98-9bab46dd2807.PNG)
+![async_reset_dia](https://user-images.githubusercontent.com/43933912/165992727-2eb53b73-ea1c-489c-be23-35d06fa37659.PNG)
 
+This flop is simulated on iverilog using a testbench, the output waveform is shown below.<br>
+![async_flop_wave_1](https://user-images.githubusercontent.com/43933912/165995356-4ccec8af-d8c9-4f47-a523-54f330390a0d.PNG)
+
+#### Asynchronous set D-Flip Flop
+An asynchronous set flip flop is actually a flip whose output Q can be set to 1 irrespective of the clock edge. It means that whenever a high 'set' signal appears on the input of D-FF, its output Q goes high otherwise it follows the input D on every clock edge. The verilog code for asynchronous set flipflop is shown below:<br>
+![verilog_async_set](https://user-images.githubusercontent.com/43933912/165996066-d580a4f8-d188-4bf2-83c7-b77c5cd3c613.PNG)
+![async_set_dia](https://user-images.githubusercontent.com/43933912/165996098-4b04174c-6488-468c-9bdf-e97013300c7f.PNG)
+
+This flop is simulated on iverilog using a testbench, the output waveform is shown below.<br>
+![async_set_wave](https://user-images.githubusercontent.com/43933912/165998045-ca9b92f3-2957-4e0d-b3fe-09c82f1916ad.PNG)
+#### Synchronous reset D-Flip Flop
+Synchronous reset flip flop is actually a flip whose output Q can be set to 0  only with respective of the clock edge. It means that whenever a high 'reset' signal appears on the input of D-FF, its output Q goes low but only at the positive edge oc clock. Otherwise it follows the input D on every clock edge. The verilog code for synchronous reset flipflop is shown below:<br>
+![sync_reset_verilog](https://user-images.githubusercontent.com/43933912/165998764-5f81c28b-5215-494f-b4cb-fcbcae35d8a8.PNG)
+![sync_reset dia](https://user-images.githubusercontent.com/43933912/165998932-6be030c2-5803-4335-b51c-320669dd3380.PNG)
+
+This flop is simulated on iverilog using a testbench, the output waveform is shown below.<br>
+![sync_reset_dia](https://user-images.githubusercontent.com/43933912/166000921-37da03fc-89e9-44e7-9cff-9687ddb42c89.PNG)
+
+#### Asyncronous-Synchronous reset D-Flip Flop
+Such flip flop has both the capability to behave as asynchronous reset as well as synchronous reset. But asynchronous reset has higher periority over synchronous reset. The verilog code for this flipflop is shown below:<br>
+![async_sync_code](https://user-images.githubusercontent.com/43933912/166007851-967ffb36-4fa8-465f-89a8-f5f39cb8429b.PNG)
+![async_sync_reset_dia](https://user-images.githubusercontent.com/43933912/166007911-e8e1a792-ea1d-404c-8298-10a2ce717a6a.PNG)
+
+This flop is simulated on iverilog using a testbench, the output waveform is shown below.<br>
+![async](https://user-images.githubusercontent.com/43933912/166008004-91e64ceb-8f15-46d9-a1a5-8f98fb2b3817.PNG)
 
 
 
