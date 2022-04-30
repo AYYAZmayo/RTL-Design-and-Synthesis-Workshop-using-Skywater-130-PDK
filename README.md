@@ -246,7 +246,20 @@ This can also observed in terms of CMOS logic. This original expression is model
 
 Incase of second technique that is boolean logic optimization, the circuit is optimized based on the K-map techinque. Here the boolean expression is reduces to minimal number of literals. To understand this let's suppose we have an expression as follows:<br>
 
-                                                  **assign  Y = a?(b?c:(c?a:0):(!c)** 
+                                                     **assign  Y = a?(b?c:(c?a:0):(!c)** <br>
+
+This expression is actully implemented interms of MUXs as shown in below figure. Based on the boolean logic this expression is optmized and reduces to an XOr gate when we write it using the boolean equqtions of a MUX.
+
+![1651319165095](https://user-images.githubusercontent.com/43933912/166111497-45d06b1d-dee2-469f-8a07-41009df2ed3d.jpg)
+
+Incase of sequational optimization there are two techniques one is basic and others are advanced.<br>
+1. Basic
+  * sequential constant propagation
+2. Advanced
+  * State optimization
+  * Retiminng
+  * Sequential logic cloning/Floor plan aware synthesis   
+
 
 
 
