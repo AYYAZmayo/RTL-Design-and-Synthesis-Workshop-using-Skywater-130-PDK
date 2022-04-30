@@ -278,8 +278,11 @@ In real cases the simulator works on the activity which means that it evaluates 
 
 ![sentivity](https://user-images.githubusercontent.com/43933912/166115684-4bff13c5-2089-41d4-98e5-5eeedd702a04.PNG)
 
-In case of bad_mux we can see that in the sentivity list of the always block there is only "sel", that means the output willl only be evaluated based on it it is not sentive to the inputs "i0" and "i1" which is not a good thing as the synthesizer mapped this a latch. Whereas incase of good_mux.v the senstivity list contains (*), which any input changes the out will be evaluated(*). This results in a MUX in a synthesizer.
+In case of bad_mux we can see that in the sentivity list of the always block there is only "sel", that means the output willl only be evaluated based on it it is not sentive to the inputs "i0" and "i1" which is not a good thing as the synthesizer mapped this a latch. Whereas incase of good_mux.v the senstivity list contains (*), which any input changes the out will be evaluated(*). This results in a MUX in a synthesizer. <br>
+#### Blocking Vs Non blocking assignments
+The blocking and non blocking assignments are used inside an always block in verilog code. The blocking assignment (=) executes the statements in the order it is written . So, the first statement is evaluated before the second statement just like a C code.
 
+Whereas the non blocking assignment (<=) executes all the RHS first whenever the always block is entered and assigns to LHS. It means it excutes in parallel. 
 
 
 
