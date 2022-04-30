@@ -283,6 +283,34 @@ In case of bad_mux we can see that in the sentivity list of the always block the
 The blocking and non blocking assignments are used inside an always block in verilog code. The blocking assignment (=) executes the statements in the order it is written . So, the first statement is evaluated before the second statement just like a C code.
 
 Whereas the non blocking assignment (<=) executes all the RHS first whenever the always block is entered and assigns to LHS. It means it excutes in parallel. 
+#### Example on GLS
+Let's we a verilog code for a 2x1 MUX using ternary operator as shown in below figure.<br>
+![e1](https://user-images.githubusercontent.com/43933912/166117197-2fa2a13c-8930-4e82-80ca-af16df6861a8.PNG)
+
+ And simulated it using iVerilog with testbench. It clearly behaves as 2x1 MUX.
+ 
+ ![e1 1](https://user-images.githubusercontent.com/43933912/166117429-8877e8f9-2f8d-4e63-b493-d57ec4c0d0ee.PNG)
+
+Now generated the netlist using Yosys for 2x1 MUX. The Yosys statistics are shown below.
+
+![e1 2](https://user-images.githubusercontent.com/43933912/166117592-11eec407-8706-466b-bfad-72ccc14d27fc.PNG)
+
+Now generated the schematic for the synthesized design using Yosys, which clearly a 2x1 MUX cell.  
+
+![e1 4](https://user-images.githubusercontent.com/43933912/166117813-06b3bfad-0e1c-4718-b4a7-55986fc832bd.PNG)
+
+Write the verilog netlist using Yosys
+
+![e1 3](https://user-images.githubusercontent.com/43933912/166117746-fed9b3d9-f8d8-40e0-bdeb-62d0cea03233.PNG)
+Now we perform GLS using iVerilog for this we need primitives.v and verilog models for standard cells along with netlist and testbench.<br>
+
+![e1 5](https://user-images.githubusercontent.com/43933912/166118142-3c7c0e13-2f76-4b33-9898-98ceed832434.PNG)
+
+On observing the waveform on gtkwave it can clearly concluded that it is behaving like a 2x1 MUX. So, GLS is functionaly verified.
+
+![e1 6](https://user-images.githubusercontent.com/43933912/166118247-45380755-a6aa-4442-8da2-4ec8561df869.PNG)
+
+
 
 
 
