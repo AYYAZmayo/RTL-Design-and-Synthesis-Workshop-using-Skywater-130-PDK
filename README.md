@@ -260,6 +260,23 @@ Incase of sequational optimization there are two techniques one is basic and oth
   * Retiminng
   * Sequential logic cloning/Floor plan aware synthesis   
 
+## Day 4: GLS, Blocking vs Non Blocking and Synthesis Mismatch
+Gate level simulation (GLS) is actually runing the testbench with the netlist as design under test (DUT). Netlist is logically same as RTL code so same testbench will allign with netlist as well. The question is why GLS is used for? So the answer to this question is that GLS is used for:<br>
+1. Verify the logical correctness of design after synthesis
+2. Ensuring the timing of the design is met. For this GLS need to be run with delay annotation.
+### GLS using iVerilog
+iVerilog just like used for simulating the RTL design can also be used for netlist siumulation. The workflow is quite similar. Here one more this have to included that is verilog models for the standard cells as netlist contains instances of different standard cells. Following figure shows the work flow of the GLS using iVerilog.<br>
+
+![gls_iverilog](https://user-images.githubusercontent.com/43933912/166114503-af093854-a397-4045-90a5-ca996d26e130.PNG)
+### Synthesis Simulation Mismatch
+The synthesis simulation mismatch could be occure due following reasons;<br>
+* Missing senstivity list
+* Blocking Vs Non blocking assignments
+* Non standard verilog coding
+
+
+
+
 
 
 
