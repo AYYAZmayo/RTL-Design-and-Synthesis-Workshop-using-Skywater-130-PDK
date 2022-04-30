@@ -309,7 +309,9 @@ Now we perform GLS using iVerilog for this we need primitives.v and verilog mode
 On observing the waveform on gtkwave it can clearly concluded that it is behaving like a 2x1 MUX. So, GLS is functionaly verified.
 
 ![e1 6](https://user-images.githubusercontent.com/43933912/166118247-45380755-a6aa-4442-8da2-4ec8561df869.PNG)
+
 #### Example on Synthesis Simulation Mismatch
+
 Let's have another code for 2x1 MUX but it is coded diffrently this time. It ic coded using always block having 'SEL' in it's senstivity list. <br>
 
 ![e2 1](https://user-images.githubusercontent.com/43933912/166118568-111f82b1-7ae5-443e-bb3f-43d91b01b13d.PNG)
@@ -330,8 +332,29 @@ Wrote the verilog netlist using Yosys
 Now performed the GLS on this bad_mux.v netlist using iVerilog. Here it can clearly be seen that it is behaving like 2x1 MUX totally opposite to the RTL simulation. So, here we have a clear observation of synthesis and simulation mismatch.<br>
 ![e2 6](https://user-images.githubusercontent.com/43933912/166119349-5d27916c-32f4-4156-8478-c0127c6182e8.PNG)
 
+#### Synthesis Simulation Mismatch for Blocking statements
+
+Let's have simple logic using blocking statements coded in verilog as shown in below figure.<br>
+
+![3 1](https://user-images.githubusercontent.com/43933912/166120086-81510d72-9ef9-438e-9732-1738fd26ab8a.PNG)
+
+According to code it is seemed to be that it performing OR on 'a' and 'b' and assigning it to 'x' which is AND with 'c' and assigned to 'd'.
+
+![e3 2](https://user-images.githubusercontent.com/43933912/166120292-75c6599e-5457-42e2-aa89-90801a19a746.PNG)
+
+Now we first simulate it using iVerilog. The simulation waveform is shown below. This behaving as latch is formed which is storing the previous value and the d is evalusted based on these values.
+
+ ![e3 3](https://user-images.githubusercontent.com/43933912/166120629-481cf158-3117-4aa4-928e-b360891f355b.PNG)
+
+Now perform GLS by simulating the GLS. For this first we generate the netlist using Yosys. It can be seen in the netlist viewer of Yosys that it is synthesized into or_and gate.
+
+![e3 4](https://user-images.githubusercontent.com/43933912/166120789-556d68a5-7b76-437f-896d-52df3032c50a.PNG)
+
+The GLS simulation is performed using iVerilog as follows. Here it can be seen that there is no latch like behaviour rathe the value of 'd' is correctly evaluated at the current values of 'a' and 'b'. So, from this synthesis simulation mismatch one should be very carefull while using the blocking statements.
+
+![e3 5](https://user-images.githubusercontent.com/43933912/166120936-5d0bce22-b9e8-45f8-896a-1381be94d9d1.PNG)
 
 
- 
+
 
 
