@@ -237,9 +237,16 @@ Logic optimization is actuallly squeezing the logic in order to get the most opt
 1. Constant propagation 
 2. boolean logic optimization
 
-In case of constant propagation technique the logic is optimized based on the signal that is contantly propagating either 0 or 1. For example, let's suppose we have a circuit based on Y= ((AB)+ C)`. The circuit diagraam for this expression is shown in belwo figure. Here you can see that if the signal A is contantly propagated as 0 then this circuit optimzed to an inverter just.<br>
+In case of constant propagation technique the logic is optimized based on the signal that is contantly propagating either 0 or 1. For example, let's suppose we have a circuit based on Y= ((AB)+ C)`. The circuit diagraam for this expression is shown in belwo figure. Here you can see that if the signal A is constantly propagated as 0 then this circuit optimzed to an inverter just.<br>
 ![1651319116220](https://user-images.githubusercontent.com/43933912/166110870-59f95752-29ce-44c6-a171-93ee15fa85a7.jpg)
 
+This can also observed in terms of CMOS logic. This original expression is modeled using 6 CMOS transisters, whereas incase of constant propagation of signal 'A' reduces the CMOS logic to only 2 CMOS transister that is reduces the area.<br>
+
+![1651319133924](https://user-images.githubusercontent.com/43933912/166111089-094fa96c-2c93-46d9-a8da-13009ba59e9a.jpg)
+
+Incase of second technique that is boolean logic optimization, the circuit is optimized based on the K-map techinque. Here the boolean expression is reduces to minimal number of literals. To understand this let's suppose we have an expression as follows:<br>
+
+                                                  **assign  Y = a?(b?c:(c?a:0):(!c)** 
 
 
 
