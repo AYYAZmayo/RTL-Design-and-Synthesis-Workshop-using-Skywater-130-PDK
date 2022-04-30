@@ -231,5 +231,15 @@ Such flip flop has both the capability to behave as asynchronous reset as well a
 This flop is simulated on iverilog using a testbench, the output waveform is shown below.<br>
 ![async](https://user-images.githubusercontent.com/43933912/166008004-91e64ceb-8f15-46d9-a1a5-8f98fb2b3817.PNG)
 
+## Day 3: Combinational and Sequential Optimizations
+### Introduction to Logic Optimization
+Logic optimization is actuallly squeezing the logic in order to get the most optimized design which is efficient in terms of area, power and performance. In otherwords it has optimum PPA. There are different techniques which are used for logic optimization both for combinational logic and sequential logic. For combinational logic there are two techniques that is:
+1. Constant propagation 
+2. boolean logic optimization
+
+In case of constant propagation technique the logic is optimized based on the signal that is contantly propagating either 0 or 1. For example, let's suppose we have a circuit based on Y= ((AB)+ C)`. The circuit diagraam for this expression is shown in belwo figure. Here you can see that if the signal A is contantly propagated as 0 then this circuit optimzed to an inverter just.<br>
+![1651319116220](https://user-images.githubusercontent.com/43933912/166110870-59f95752-29ce-44c6-a171-93ee15fa85a7.jpg)
+
+
 
 
