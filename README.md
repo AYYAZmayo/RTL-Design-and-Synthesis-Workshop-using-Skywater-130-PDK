@@ -273,9 +273,12 @@ The synthesis simulation mismatch could be occure due following reasons;<br>
 * Missing senstivity list
 * Blocking Vs Non blocking assignments
 * Non standard verilog coding
+#### Missing senstivity list
+In real cases the simulator works on the activity which means that it evaluates the output whenever there is a change in the input or the inputs included in the senstivity list. On the otherhand synthesizer does not look into the senstivity list it only looks into the logic. T o understand this let's suppose we have implemented the a MUX using two different methods as shown in below figure as bad_mux.v and good_mux.v.
 
+![sentivity](https://user-images.githubusercontent.com/43933912/166115684-4bff13c5-2089-41d4-98e5-5eeedd702a04.PNG)
 
-
+In case of bad_mux we can see that in the sentivity list of the always block there is only "sel", that means the output willl only be evaluated based on it it is not sentive to the inputs "i0" and "i1" which is not a good thing as the synthesizer mapped this a latch. Whereas incase of good_mux.v the senstivity list contains (*), which any input changes the out will be evaluated(*). This results in a MUX in a synthesizer.
 
 
 
