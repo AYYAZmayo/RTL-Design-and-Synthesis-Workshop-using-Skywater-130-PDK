@@ -376,8 +376,12 @@ This in hardaware will infered a latch that have OR gate at the enable having in
 
  ![c5](https://user-images.githubusercontent.com/43933912/166133972-6f9a6dec-9961-4901-ab9c-1b719aa1b1db.PNG)
 
+As can be seen in belwo figure for the missing else for 'en' the counter latch to previous value if 'en' is zero. So, here latch is intetional.<br>
 
+ ![c6](https://user-images.githubusercontent.com/43933912/166134344-c57f22e7-177b-4179-a69f-4065dd869967.PNG)
 
+**In combinational circuits latchtes are not allowed.** <br>
+ 
 
 
 
