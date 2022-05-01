@@ -489,9 +489,10 @@ The synthesis schematic is generated from yosys.
 
  The generated verilog netlist is shown below.
  
- ![c31](https://user-images.githubusercontent.com/43933912/166142172-36682f9e-1d75-462e-b66f-901699e2e53b.PNG
+![c31](https://user-images.githubusercontent.com/43933912/166142448-ef2baec5-8498-4507-a4c6-5e4ef76daa06.PNG)
 
  Upon performing the GLS in iVerilog, it can be seen in the waveform that there is no unpredictability in the ouput. rather it follows 'i0' when 'sel=00' , 'i1' when 'sel=01', 'i2' when 'sel=10' and 'i3' when 'sel=11'.
+ 
  ![c32](https://user-images.githubusercontent.com/43933912/166142384-f44364c7-312f-4260-bf36-baa961787c18.PNG)
 
  
