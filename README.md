@@ -565,7 +565,8 @@ Now we generate the netlsit for performing the GLS
  
  Upon performing the GLS in iVerilog, it can be seen in the waveform that the ouput follows 'i'.For sel=000 'o0' following the 'i', for sel=001 'o1' is following the 'i', for sel=010 'o2' following 'i' and for sel=011 'o3' is following 'i' so on.
  
- ![c49](https://user-images.githubusercontent.com/43933912/166150356-09fb6ef6-db80-4621-81ae-3dadcb0e8d6c.PNG)
+![c49](https://user-images.githubusercontent.com/43933912/166150819-0dba0389-671e-488d-9715-d88b07ea7600.PNG)
+
 
 
 
