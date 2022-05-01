@@ -409,11 +409,11 @@ As we have mentioned previously that an incomplete IF result in a Latch. Now we 
 
  ![c12](https://user-images.githubusercontent.com/43933912/166137116-267c64e4-93d2-467a-bcdd-798c9a4698d8.PNG)
 
-Accoring to the code it;s hardware would be a D latch as shown in below figure.
+Accoring to the code its hardware would be a D latch as shown in below figure.
  
  ![c13](https://user-images.githubusercontent.com/43933912/166137346-f1c0ddb5-1e18-44a1-86fd-d8f47318067c.PNG)
 
-Now we simulate it on iVerilog using a testbench. According to the waveform it can be seen it infering a latch.
+Now we simulate it on iVerilog using a testbench. According to the waveform it can be seen it is infering a latch.
  
  ![c14](https://user-images.githubusercontent.com/43933912/166137574-37deb707-8fea-4790-bb9b-dd120c238545.PNG)
 
@@ -425,10 +425,46 @@ The synthesis schematic generated from yosys it can also be seen that it is infe
  
 ![c16](https://user-images.githubusercontent.com/43933912/166137749-75b58240-aa84-44dd-a9a1-113dd4a60e2d.PNG)
  
+ #### Another example of incomplete IF construct
+Now we code an other incomplete IF and perform its simulation and synthesis to check whether it infers a latch or not. To do this we have following verilog code:
  
+ ![c17](https://user-images.githubusercontent.com/43933912/166139255-064f2450-1b88-4cf1-8bbe-1156c8f818cc.PNG)
+Accoring to the code its hardware would infer a latch as shown in below figure.
  
+ ![c18](https://user-images.githubusercontent.com/43933912/166139441-5e34c450-130c-40d2-8ff6-b042449741f7.PNG)
  
+Now we simulate it on iVerilog using a testbench. According to the waveform it can be seen it is infering a latch.
  
+ ![c19](https://user-images.githubusercontent.com/43933912/166139968-8571e83a-1919-43af-a79c-5e6f8341914c.PNG)
+
+
+Now we perform its synthesis to check whether in synthesis it also refering a Latch. The Yosys statistics are shown below.
  
+![c20](https://user-images.githubusercontent.com/43933912/166140054-544fa4be-673e-4ed4-b19c-9f42027f70de.PNG)
+
+The synthesis schematic generated from yosys it can also be seen that it is inferring a Latch.
  
+ ![c21](https://user-images.githubusercontent.com/43933912/166140096-10e88b0e-7c02-447f-8018-258bad23fa51.PNG)
+
+### Synthesis and Simulation of Incomplete Case statement 
+As we have mentioned previously that an incomplete case statement result in a Latch. Now we code an incomplete case and perform its simulation and synthesis to check whether it infers a latch or not. To do this we have following verilog code:
+
+![c21](https://user-images.githubusercontent.com/43933912/166140365-6b5b658b-07b2-434a-954a-2acfaf718817.PNG)
+
+Accoring to the code its hardware would be a D latch as shown in below figure.
  
+![c23](https://user-images.githubusercontent.com/43933912/166140753-df08e792-9c66-47ee-b3a1-f726f6115d9d.PNG)
+
+Now we simulate it on iVerilog using a testbench. According to the waveform it can be seen it is infering a latch.
+
+ ![c24](https://user-images.githubusercontent.com/43933912/166140813-9054314a-f610-47be-b56a-79af3c181acb.PNG)
+
+Now we perform its synthesis to check whether in synthesis it also refering a Latch. The Yosys statistics are shown below.
+ 
+ ![c25](https://user-images.githubusercontent.com/43933912/166140880-b47d42ee-5ed5-4826-824e-ff2e40ae6def.PNG)
+
+The synthesis schematic is generated from yosys. It can also be seen that it is inferring a Latch.
+
+ ![c26](https://user-images.githubusercontent.com/43933912/166140945-cb69e29e-38d3-4722-b6d1-ee40dfaf6e2b.PNG)
+ 
+
