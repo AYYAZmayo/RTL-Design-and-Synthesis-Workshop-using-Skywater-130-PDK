@@ -466,5 +466,32 @@ Now we perform its synthesis to check whether in synthesis it also refering a La
 The synthesis schematic is generated from yosys. It can also be seen that it is inferring a Latch.
 
  ![c26](https://user-images.githubusercontent.com/43933912/166140945-cb69e29e-38d3-4722-b6d1-ee40dfaf6e2b.PNG)
+#### Overlapping Case statments sytnhesis and simulation
+As we have mentioned previously that an overlaping case statement result in unpredictable output. Now we code a overlaping case statement and perform its simulation and synthesis to check whether it infers a latch or not. To do this we have following verilog code:
  
+ ![image](https://user-images.githubusercontent.com/43933912/166141512-d4ed7d0a-0915-4105-bfac-3a6999e7cd6b.png)
+ 
+Now we simulate it on iVerilog using a testbench. According to the waveform it can be seen the output is unpredictable in the highlighted box.
+
+ ![c27](https://user-images.githubusercontent.com/43933912/166141807-2d5e388b-dfb7-48a0-8158-a44b31cb678c.PNG)
+ 
+Now we perform its synthesis in Yosys
+
+ ![c28](https://user-images.githubusercontent.com/43933912/166141886-65f98a7d-88df-447d-bc31-47e3c7579ce0.PNG)
+
+The synthesis schematic is generated from yosys.
+ 
+ ![c29](https://user-images.githubusercontent.com/43933912/166141920-83031842-6756-4f27-bb53-f2d80ef7e1a8.PNG)
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
 
