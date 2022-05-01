@@ -364,8 +364,14 @@ The GLS simulation is performed using iVerilog as follows. Here it can be seen t
  
  ![if_hardware2](https://user-images.githubusercontent.com/43933912/166132922-04a7805e-03b8-4157-a3a0-abdad9f604f7.PNG)
  #### IF constructs  danger/caution
- It infered latches incase of bad coding practices or missing else construct in the code. e.g 
+ It infered latches incase of bad coding practices or missing else construct in the code. e.g we have bad coding practise of missing the final else in teh code as shown in belwo figure.<br>
  
+ ![c3](https://user-images.githubusercontent.com/43933912/166133268-140cc2e8-3320-4ffe-81ec-84dc5201be4b.PNG)
+
+ This in hardaware will infered a latch that have OR gate at the enable having inputs <cond1> and <cond2>. When ever both of this condition are false than this latch enables and store the value of Y and provides it next time. So, latch is not intentional rather it is created because of bad coding of IF construct.
+ 
+ ![c4](https://user-images.githubusercontent.com/43933912/166133363-db1bd170-5340-4118-baa0-c25bd1ad2225.PNG)
+
 
 
 
