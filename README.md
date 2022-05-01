@@ -354,6 +354,20 @@ The GLS simulation is performed using iVerilog as follows. Here it can be seen t
 
 ![e3 5](https://user-images.githubusercontent.com/43933912/166120936-5d0bce22-b9e8-45f8-896a-1381be94d9d1.PNG)
 
+## Day 5: IF, Case, For Loop and For Generate
+### IF constructs
+**If** construct is used in verilog for periorty logic implementation. A sample code for IF construct is shown below. Here if the condition 1 <cond1> is true than 'c1' part of code will be excuted, else if the condition 2 <cond2> gets true than 'c2' part of code will run, else if condition 3 <cond3> gets true than 'c3' part of code will run if none of the above conditions are true than the 'else' part of code which 'c4' will be executed.
+ 
+![if_code1](https://user-images.githubusercontent.com/43933912/166132806-a3cd1bbf-2e46-42f6-b0ac-38fb9c01817b.PNG)
+ 
+ In hardware this **If** construct is evaluated as MUXs as shon in the belwo figure. If <cond1> is true than 'c1' will be at the output, else if <cond2> gets true than 'c2' will be available at the output, else if <cond3> gets true than 'c3' will be available at the output else the 'c4' will reach to the output.
+ 
+ ![if_hardware2](https://user-images.githubusercontent.com/43933912/166132922-04a7805e-03b8-4157-a3a0-abdad9f604f7.PNG)
+ #### IF constructs  danger/caution
+ It infered latches incase of bad coding practices or missing else construct in the code. e.g 
+ 
+
+
 
 
 
