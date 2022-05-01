@@ -382,7 +382,22 @@ As can be seen in belwo figure for the missing else for 'en' the counter latch t
 
 **In combinational circuits latchtes are not allowed.** <br>
  
+ ### Case Statement
+Just like IF construct 'Case' is also used inside always block and whatever you want to assign must be a register variable. Here, we have a simple 'case' statement code. It is evaluated for all the possible combinations of 'sel'. As can be seen that for every possible combination 'Y' assigned to a value. In terms of hardware this code implements a MUX. <br>
+![c7](https://user-images.githubusercontent.com/43933912/166135131-8a792e45-519b-4d0e-9a0b-7b42db508251.PNG)
+ ### Caveats with Case
+ #### 1. Incompelete case statement infers latches
+ If we have not assigned the output Y for every possible commbination of case then it will infer a latch for missing case statements.
+ 
+![c8](https://user-images.githubusercontent.com/43933912/166135744-6f442ab0-8620-44a9-a502-ea36ed971e79.PNG)
+ 
+ To avoid latch infering fro missing case statements we case use default case statment.e.g
+![c9](https://user-images.githubusercontent.com/43933912/166135754-19159414-3f04-4b1b-8d01-1da8b6548ad8.PNG)
+
+#### 2. Partial assignments in case
+If we have missing or partial assignments in case statements it will also infer latch for those missing asignments. e.g. <br>
 
 
-
+ 
+ 
 
