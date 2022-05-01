@@ -493,7 +493,28 @@ The synthesis schematic is generated from yosys.
 
  Upon performing the GLS in iVerilog, it can be seen in the waveform that there is no unpredictability in the ouput. rather it follows 'i0' when 'sel=00' , 'i1' when 'sel=01', 'i2' when 'sel=10' and 'i3' when 'sel=11'.
  
- ![c32](https://user-images.githubusercontent.com/43933912/166142384-f44364c7-312f-4260-bf36-baa961787c18.PNG)
+![c32](https://user-images.githubusercontent.com/43933912/166142384-f44364c7-312f-4260-bf36-baa961787c18.PNG)
+
+### For Loop and For Generate
+In verilog there are two type of looping constructs are used.
+1. For Loop 
+It is used inside the always block and it used for evaluating the expressions.
+2. For generate
+It is outside the always block. It mainly used for instantiating the hardware for multipe times.
+#### For loop
+ To understand the use of foor loop let's take the example of MUX. As we know that it is quite easy to a 2x1 MUX using IF constructs. Similary, a 4x1 MUX can be written using CASE statements. But when we going to write a 32x1 MUX using similar case statments it quite laborious and lenth task as can be seen in the below figure, we have to write all the possible 32 combinations for 32x1. 
+ ![c33](https://user-images.githubusercontent.com/43933912/166143892-69a0992a-ec75-4a36-bff3-9507e0b1eb2e.PNG)
+ 
+ To make the task easy we can use a For loop inside the always block for genetating 32x1 MUX or higer MUXs in few lines of code.
+ 
+ ![c34](https://user-images.githubusercontent.com/43933912/166144239-b3889b72-7449-4286-a62c-8e1707f7fe20.PNG)
+ So, for loop is helpful in creating a very wide MUX or DMUX.
+ #### For generate Loop
+ This type of loop is used for instantiating the hardware for multiple times. Let's for some reason we have to instantiate an AND in module for 8 times. We can instantiate it using for-generate loop as follows.
+
+ ![c35](https://user-images.githubusercontent.com/43933912/166144670-2bdf56a2-970f-4d0d-9187-66f39dcdc8ee.PNG)
+
+ 
 
  
  
