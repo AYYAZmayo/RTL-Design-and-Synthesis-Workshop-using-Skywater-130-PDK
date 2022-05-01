@@ -37,15 +37,20 @@ gtkwave provide the output wavform as shown below.
 
 
 ### Introduction to Yosys and Logic Synthesis
+Logic synthesis is a process in which RTL design based on an HDL such as verilog, system verilog or VHDL is mapped into standard logic cell based on particular technology library. Here belwo figure is a depiction of the synthesis process.
 
 ![pic9_synthesis](https://user-images.githubusercontent.com/43933912/165377708-8da2aafe-dd42-4ba1-8028-cb841697d869.PNG)
+
+A RTL design written in verilog is converted to respective gate level logic based on different constructs. For example, the top moduel's inputs and output are resulted into the ports of the design. The assign statement which is in below figure is implemented using a ternary operator is converted to a MUX. Similarly, the always block having clock in it's sentivity list is converted a register as shown in below figure.
 
 ![synthesis](https://user-images.githubusercontent.com/43933912/165377765-e924d694-5437-4b18-a508-41e737da81f3.PNG)
 
 
-Yosys is RTL synthesizer. A synthesizer is a tool which converts RTL into gate level netlist.
+Yosys is an RTL synthesizer. A synthesizer is a tool which converts RTL into gate level netlist. So, Yosys takes the verilog based RTL design, standard cell library as input and generate a netlist.
 
 ![pic7_yosys](https://user-images.githubusercontent.com/43933912/165377815-78ffcbe3-fc2e-495f-ae21-a1c29a4027c2.PNG)
+
+On the other hand iVerilog is a simulator which takes the RTL code for a design or a netlist, and a testbench and dumps a VCD file which is reading by GTKwave. GTKwave generates the resulting waveform of the design.
 
 ![pic8_verify_netflow](https://user-images.githubusercontent.com/43933912/165377851-3dd62759-6010-4940-b8e0-6a70735baa9f.PNG)
 
