@@ -389,7 +389,7 @@ Just like IF construct 'Case' is also used inside always block and whatever you 
  #### 1. Incompelete case statement infers latches
  If we have not assigned the output Y for every possible commbination of case then it will infer a latch for missing case statements.
  
-![c8](https://user-images.githubusercontent.com/43933912/166135744-6f442ab0-8620-44a9-a502-ea36ed971e79.PNG)
+![c8](https://user-images.githubusercontent.com/43933912/166136545-1b65f484-7b4d-44b2-a1ed-4223d0872907.PNG)
  
  To avoid latch infering fro missing case statements we case use default case statment.e.g
 ![c9](https://user-images.githubusercontent.com/43933912/166135754-19159414-3f04-4b1b-8d01-1da8b6548ad8.PNG)
@@ -399,6 +399,10 @@ If we have missing or partial assignments in case statements it will also infer 
 
 ![c10](https://user-images.githubusercontent.com/43933912/166136261-e231c7d2-9210-4f88-a0fe-bc2723b04807.PNG)
 
+ #### 3. Overlapping Case statments
  
- 
+In case statment all the posiible combinations of the variable are evaluated which is present in the case statement. If somehow we have used overlaping combination in the case statement then it results in unpredictable output e.g.
 
+![c11](https://user-images.githubusercontent.com/43933912/166136552-27a21530-5066-4e34-acec-4c32be67b70d.PNG)
+
+ 
