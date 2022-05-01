@@ -404,5 +404,31 @@ If we have missing or partial assignments in case statements it will also infer 
 In case statment all the posiible combinations of the variable are evaluated which is present in the case statement. If somehow we have used overlaping combination in the case statement then it results in unpredictable output e.g.
 
 ![c11](https://user-images.githubusercontent.com/43933912/166136552-27a21530-5066-4e34-acec-4c32be67b70d.PNG)
+### Synthesis and Simulation of IF construct
+As we have mentioned previously that an incomplete IF result in a Latch. Now we code an incomplete IF and perform its simulation and synthesis to check whether it infers a latch or not. To do this we have following verilog code:
 
+ ![c12](https://user-images.githubusercontent.com/43933912/166137116-267c64e4-93d2-467a-bcdd-798c9a4698d8.PNG)
+
+Accoring to the code it;s hardware would be a D latch as shown in below figure.
+ 
+ ![c13](https://user-images.githubusercontent.com/43933912/166137346-f1c0ddb5-1e18-44a1-86fd-d8f47318067c.PNG)
+
+Now we simulate it on iVerilog using a testbench. According to the waveform it can be seen it infering a latch.
+ 
+ ![c14](https://user-images.githubusercontent.com/43933912/166137574-37deb707-8fea-4790-bb9b-dd120c238545.PNG)
+
+Now we perform its synthesis to check whether in synthesis it also refering a Latch. The Yosys statistics are shown below.
+ 
+ ![c15](https://user-images.githubusercontent.com/43933912/166137686-56e876d7-2483-4376-847a-fc57946a662c.PNG)
+
+The synthesis schematic generated from yosys it can also be seen that it is inferring a Latch.
+ 
+![c16](https://user-images.githubusercontent.com/43933912/166137749-75b58240-aa84-44dd-a9a1-113dd4a60e2d.PNG)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
