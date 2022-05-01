@@ -397,6 +397,7 @@ Just like IF construct 'Case' is also used inside always block and whatever you 
 #### 2. Partial assignments in case
 If we have missing or partial assignments in case statements it will also infer latch for those missing asignments. e.g. <br>
 
+![c10](https://user-images.githubusercontent.com/43933912/166136261-e231c7d2-9210-4f88-a0fe-bc2723b04807.PNG)
 
  
  
