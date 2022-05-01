@@ -508,11 +508,68 @@ It is outside the always block. It mainly used for instantiating the hardware fo
  To make the task easy we can use a For loop inside the always block for genetating 32x1 MUX or higer MUXs in few lines of code.
  
  ![c34](https://user-images.githubusercontent.com/43933912/166144239-b3889b72-7449-4286-a62c-8e1707f7fe20.PNG)
+ 
  So, for loop is helpful in creating a very wide MUX or DMUX.
  #### For generate Loop
  This type of loop is used for instantiating the hardware for multiple times. Let's for some reason we have to instantiate an AND in module for 8 times. We can instantiate it using for-generate loop as follows.
 
  ![c35](https://user-images.githubusercontent.com/43933912/166144670-2bdf56a2-970f-4d0d-9187-66f39dcdc8ee.PNG)
+ #### Example of MUX using FOR Loop 
+ Let's suppose we generate a MUX using a for loop. The verilog code is shown below. Here we have used 'i_int', which is actually bus combining the {i0,i1,i2,i3} in a single variable.
+
+  ![c36](https://user-images.githubusercontent.com/43933912/166146956-a794f313-86b0-4348-aabb-2f9ffa1bd5ba.PNG)
+ 
+Now we simulate this code using iVerilog and a tesetbench. Clearly it can be sen that it is acurately simulating a 4x1 mux. For sel=00 'y' following the 'i0', for sel=01 'y' is following the 'i1', for sel=10 'y' following 'i2' and for sel=11 'y' is following 'i3'.
+ 
+![c37](https://user-images.githubusercontent.com/43933912/166147161-c2aae9aa-9fa0-4872-b27a-e9c7f0d00d8b.PNG)
+ 
+Now we perform its synthesis in Yosys
+
+![c38](https://user-images.githubusercontent.com/43933912/166147726-69659ded-73f1-4686-af41-885e54c2ef57.PNG)
+
+The synthesis schematic is generated from yosys.
+ 
+![c39](https://user-images.githubusercontent.com/43933912/166147736-1c89a1df-6151-448e-b2d7-bb3898b1c5f9.PNG)
+
+ Now we generate the netlsit for performing the GLS
+ 
+![c40](https://user-images.githubusercontent.com/43933912/166147741-761ec06b-a638-47d7-9102-2d264353a310.PNG)
+
+ The generated verilog netlist is shown below.
+ 
+ ![c41](https://user-images.githubusercontent.com/43933912/166147878-150c30b8-1d7b-4c25-8a8c-afc46c5e3d05.PNG)
+ ![c42](https://user-images.githubusercontent.com/43933912/166147887-45d72d63-3f48-4176-8beb-a3a400976159.PNG)
+
+ Upon performing the GLS in iVerilog, it can be seen in the waveform that the ouput follows 'i0' when 'sel=00' , 'i1' when 'sel=01', 'i2' when 'sel=10' and 'i3' when 'sel=11'. So, there is no simulation synthesis mismatch here.
+ 
+ ![c43](https://user-images.githubusercontent.com/43933912/166148041-4007d303-4c55-4744-b54b-fbbb2a5ff518.PNG)
+ #### Example of DMUX using FOR Loop 
+ Let's suppose we generate a DMUX using a for loop. The verilog code is shown below. 
+ 
+ ![c44](https://user-images.githubusercontent.com/43933912/166148279-c072d4a9-6f6e-4c9d-a6df-46a13730554c.PNG)
+ 
+Now we simulated this code using iVerilog and a tesetbench. Clearly it can be sen that it is acurately simulating a 1x8 Dmux. For sel=000 'o0' following the 'i', for sel=001 'o1' is following the 'i', for sel=010 'o2' following 'i' and for sel=011 'o3' is following 'i' so on and so forth.
+ 
+![c45](https://user-images.githubusercontent.com/43933912/166148444-96e77c2e-6451-49f2-82f0-183893f6e167.PNG)
+ 
+Now we perform its synthesis in Yosys
+
+ ![c46](https://user-images.githubusercontent.com/43933912/166150116-043c41d1-5d48-4d84-a4f4-3273958251df.PNG)
+
+The synthesis schematic is generated from yosys.
+ ![c47](https://user-images.githubusercontent.com/43933912/166150126-4a1e7973-25e6-48ce-af21-11e947104a23.PNG)
+
+Now we generate the netlsit for performing the GLS
+ 
+![c48](https://user-images.githubusercontent.com/43933912/166150140-9153446f-812d-4297-9834-50de2b5f8435.PNG)
+ 
+ Upon performing the GLS in iVerilog, it can be seen in the waveform that the ouput follows 'i'.For sel=000 'o0' following the 'i', for sel=001 'o1' is following the 'i', for sel=010 'o2' following 'i' and for sel=011 'o3' is following 'i' so on.
+ 
+ ![c49](https://user-images.githubusercontent.com/43933912/166150356-09fb6ef6-db80-4621-81ae-3dadcb0e8d6c.PNG)
+
+
+
+
 
  
 
