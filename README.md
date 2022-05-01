@@ -572,6 +572,32 @@ Now we generate the netlsit for performing the GLS
  
 ![c49](https://user-images.githubusercontent.com/43933912/166150819-0dba0389-671e-488d-9715-d88b07ea7600.PNG)
 
+  #### Example of For generate using Ripple Carry Adder
+A simple adder for adding binary number is a ripple carry adder. It's buliding block is full adder. For example a 4 bit ripple carry adder is formed by connecting back to back four full adders. So, for writing the a 4 bit ripplr carry adder we need to instantiate 4 full aders in our code.
+
+ ![c50](https://user-images.githubusercontent.com/43933912/166152234-8ac6d0bf-043a-4fae-86f2-f1cca6a59e15.PNG)
+
+ If we have to make 8 bit ripple carry adder than we have to instantiate 8 full adders in our code, Or in case 32 bit ripple carry adder we need 32 instantiation of same basic building blokc of full adder. This can be done efficiently using for-generate loop. Let;s take the example of a 8 bit ripple carry adder which coded using for-generate loop as shown below figure.
+ 
+ ![c51](https://user-images.githubusercontent.com/43933912/166152594-07c3f98e-e2df-4682-a983-f9c4bfe30916.PNG)
+ 
+ Now we perform its simulatio using iverilog and a tesbench. The resulting waveform is shown in belwo figure.
+
+ ![c52](https://user-images.githubusercontent.com/43933912/166152751-6a421eba-1793-4936-a8e4-ae6beac37b34.PNG)
+
+Now we perform its synthesis in Yosys
+
+![c53](https://user-images.githubusercontent.com/43933912/166152947-4fe0527a-3239-40ea-b494-4c38e817f128.PNG)
+
+The synthesis schematic is generated from yosys.
+ 
+ ![c54](https://user-images.githubusercontent.com/43933912/166153101-ccb367c0-f251-4643-80f4-b3cabb6ba7a9.PNG)
+
+Now performed the GLS of the rippple carry adder.
+
+![c55](https://user-images.githubusercontent.com/43933912/166153342-4526583d-f690-440c-93c8-41aaeccea0ed.PNG)
+
+Here the 5 day work concluded.
 
 
 
