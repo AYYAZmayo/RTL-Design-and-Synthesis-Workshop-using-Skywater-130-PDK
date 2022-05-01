@@ -368,9 +368,13 @@ The GLS simulation is performed using iVerilog as follows. Here it can be seen t
  
  ![c3](https://user-images.githubusercontent.com/43933912/166133268-140cc2e8-3320-4ffe-81ec-84dc5201be4b.PNG)
 
- This in hardaware will infered a latch that have OR gate at the enable having inputs <cond1> and <cond2>. When ever both of this condition are false than this latch enables and store the value of Y and provides it next time. So, latch is not intentional rather it is created because of bad coding of IF construct.
+This in hardaware will infered a latch that have OR gate at the enable having inputs <cond1> and <cond2>. When ever both of this condition are false than this latch enables and store the value of Y and provides it next time. So, latch is not intentional rather it is created because of bad coding of IF construct.
  
  ![c4](https://user-images.githubusercontent.com/43933912/166133363-db1bd170-5340-4118-baa0-c25bd1ad2225.PNG)
+
+ There are some cases where latch inferening is intentional and needed for the proper operation of circuit. For example let's suppose we write a 3 bit counter as follows, in the always block we have reset at which the counter reset to 0 and an enable 'en' at which it starts incrementing otherwise it stays at the same number.
+
+ ![c5](https://user-images.githubusercontent.com/43933912/166133972-6f9a6dec-9961-4901-ab9c-1b719aa1b1db.PNG)
 
 
 
