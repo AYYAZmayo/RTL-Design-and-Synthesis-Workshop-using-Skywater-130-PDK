@@ -251,7 +251,7 @@ This can also observed in terms of CMOS logic. This original expression is model
 
 Incase of second technique that is boolean logic optimization, the circuit is optimized based on the K-map techinque. Here the boolean expression is reduces to minimal number of literals. To understand this let's suppose we have an expression as follows:<br>
 
-                                                     **assign  Y = a?(b?c:(c?a:0):(!c)** <br>
+                                                   assign  Y = a?(b?c:(c?a:0):(!c) 
 
 This expression is actully implemented interms of MUXs as shown in below figure. Based on the boolean logic this expression is optmized and reduces to an XOr gate when we write it using the boolean equqtions of a MUX.
 
